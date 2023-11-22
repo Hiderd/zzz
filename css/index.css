@@ -1,0 +1,138 @@
+.bodya1 {
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: 150px;
+	padding-bottom: 50px;
+	display: flex;
+	border-bottom: 1px solid;
+	border-color: rgb(119, 136, 148);
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+}
+
+.bodya1 .left {
+	width: 30%;
+	color: white;
+}
+
+.s1 {
+	display: block;
+	color: rgb(119, 136, 148);
+	padding-bottom: 15px;
+}
+
+.s2 {
+	display: block;
+	font-size: 42px;
+	padding-bottom: 15px;
+}
+
+.s3 {
+	display: block;
+	color: rgb(119, 136, 148);
+	padding-bottom: 15px;
+}
+
+.left a {
+	color: red;
+	text-decoration: none;
+}
+
+.right {
+	overflow: hidden;
+	margin-left: 50px;
+	margin-top: 50px;
+	height: 100%;
+	width: 100%;
+}
+
+.right img {
+	overflow: hidden;
+	height: 100% auto;
+	width: 100%;
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+
+.bodya2-head {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.bodya2 {
+	margin-top: 50px;
+	margin-left: 150px;
+	margin-right: 150px;
+	padding-bottom: 50px;
+	height: auto;
+	border-bottom: 1px solid;
+	border-color: rgb(119, 136, 148);
+}
+
+.bodya2 h1 {
+	color: white;
+	font-size: 42px;
+	margin-top: 30px;
+}
+
+.b1 {
+	display: block;
+	color: rgb(35, 41, 39);
+	font-size: 14px;
+	margin-top: 40px;
+	right: 180px;
+	position: absolute;
+	text-align: right;
+	width: 100px;
+	height: 30px;
+	vertical-align: middle;
+	line-height: 32px;
+	border-radius: 50px 50px 50px 50px;
+	border: 1px solid;
+	background-color: rgb(35, 41, 39);
+	text-decoration: none;
+}
+
+.b1 span {
+	color: white;
+}
+
+.b1:hover {
+	background: linear-gradient(to right, red, blue);
+}
+
+.bodya2-body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.img-block {
+	width: 24%;
+}
+
+.bodya2-body img {
+	width: 100%;
+}
+
+.bodya2-body-font {
+	overflow-y: auto;
+	/* 竖向溢出时显示滚动条 */
+	display: block;
+	background-color: #fff;
+	height: 220px;
+	font-size: 23px;
+	padding-top: 30px;
+	font-weight: 600;
+}
+
+.bodya2-body-font-l {
+	font-size: 17px;
+	display: block;
+	padding-top: 40px;
+	color: rgb(63, 66, 69);
+}

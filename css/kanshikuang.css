@@ -1,0 +1,17 @@
+aside{
+	height: 100%;
+}
+.next-button {
+	position: absolute;
+	right: 0;
+	top: 190px;
+	font-size: 25px;
+	z-index: 1;
+}
+.pre-button{
+	position: absolute;
+	left: 0;
+	top: 190px;
+	font-size: 25px;
+	z-index: 1;
+}
