@@ -42,68 +42,65 @@
 				<video width="100%" height="650px" id="videoElement" controls autoplay
 					style="margin-bottom: -60px;"></video>
 				<script>
-					if (flvjs.isSupported()) {
-						var videoElement = document.getElementById('videoElement');
-						var urls = [
-							// 24小时
-							'https://pull-flv-f26.douyincdn.com/media/stream-7303740807876840202.flv?abr_pts=-800&_session_id=037-20231122110301CE0E98979A43C4A3921D.1700622185264.86183',
-							'https://pull-flv-l26.douyincdn.com/stage/stream-7303169055505009434.flv?expire=6566aa00&sign=639440a1b38a624cb7c674a862441aac&abr_pts=-800&_session_id=037-202311221103276C17A1E44D8621A3B85B.1700622211551.42158'
-						];
-						var currentIndex = 0;
-
-						var flvPlayer = flvjs.createPlayer({
-							type: 'flv',
-							url: urls[currentIndex]
-						});
-
-						flvPlayer.attachMediaElement(videoElement);
-						flvPlayer.load();
-						flvPlayer.play();
-
-						flvPlayer.on('error', function() {
-							alert("当前直播已经下播!请点击右侧小黄脸去下一个直播间!");
-						});
-
-						function switchToNextRoom() {
-							currentIndex++;
-							if (currentIndex < urls.length) {
-								flvPlayer.detachMediaElement();
-								flvPlayer.destroy();
-
-								flvPlayer = flvjs.createPlayer({
-									type: 'flv',
-									url: urls[currentIndex]
-								});
-
-								flvPlayer.attachMediaElement(videoElement);
-								flvPlayer.load();
-								flvPlayer.play();
-							} else {
-								console.error('所有视频链接均不可用！');
-							}
-						}
-						
-						function switchToPreviousRoom() {
-							currentIndex--;
-							if (currentIndex >= 0) {
-								flvPlayer.detachMediaElement();
-								flvPlayer.destroy();
-						
-								flvPlayer = flvjs.createPlayer({
-									type: 'flv',
-									url: urls[currentIndex]
-								});
-						
-								flvPlayer.attachMediaElement(videoElement);
-								flvPlayer.load();
-								flvPlayer.play();
-							} else {
-								console.error('已经是第一个视频链接！');
-							}
-						}
-						document.getElementById('nextButton').addEventListener('click', switchToNextRoom);
-						document.getElementById('previousButton').addEventListener('click', switchToPreviousRoom);
-					}
+				    if (flvjs.isSupported()) {
+				        var videoElement = document.getElementById('videoElement');
+				        var urls = [
+				            'https://pull-l3.douyincdn.com/third/stream-690641190585893343_sd.flv?auth_key=1702033930-0-0-f15c0b0fc96ef3a4aa3900bea6a709ff&abr_pts=-800&_session_id=037-20231201194210212E2CBE180853317D22.1701430932569.75485',
+				            'https://pull-flv-l1.douyincdn.com/game/stream-690641352587477045_sd.flv?abr_pts=-800&_session_id=037-20231201194325BFAA32C8144F4D272B75.1701431007750.38529',
+				            'https://pull-l3.douyincdn.com/third/stream-114178744185782751_sd.flv?auth_key=1702033787-0-0-1bf49dd7a2ded61e31d5f1526fb7fcba&abr_pts=-800&_session_id=037-20231201193947353861A569D41D27AE4D.1701430789213.31294',
+				            'https://pull-flv-l11.douyincdn.com/third/stream-7307225213308062498_sd.flv?expire=1702035649&sign=40c005d64f335772c2a47f8235c4388f&abr_pts=-800&_session_id=037-20231201194049B0B56F4CBA85A23897A3.1701430851414.16289',
+				            'https://pull-l3.douyincdn.com/third/stream-7307429924804070182.flv?auth_key=1702033888-0-0-f70fbda1f86c03f3edb528a8406df6b8&abr_pts=-800&_session_id=037-202312011941270BAE6A099BF54230619A.1701430889823.01073',
+				        ];
+				        var currentIndex = 0;
+				
+				        var flvPlayer = flvjs.createPlayer({
+				            type: 'flv',
+				            url: urls[currentIndex]
+				        });
+				
+				        flvPlayer.attachMediaElement(videoElement);
+				        flvPlayer.load();
+				        flvPlayer.play();
+				
+				        flvPlayer.on('error', function() {
+				            alert("当前直播已经下播!请点击右侧小黄脸去下一个直播间!");
+				        });
+				
+				        function switchToNextRoom() {
+				            currentIndex++;
+				            if (currentIndex < urls.length) {
+				                switchToRoom(currentIndex);
+				            } else {
+				                alert('已经到最后一个直播间啦！');
+				            }
+				        }
+				
+				        function switchToPreviousRoom() {
+				            currentIndex--;
+				            if (currentIndex >= 0) {
+				                switchToRoom(currentIndex);
+				            } else {
+				                alert('已经是第一个视频链接！');
+				            }
+				        }
+				
+				        function switchToRoom(index) {
+				            flvPlayer.detachMediaElement();
+				            flvPlayer.destroy();
+				
+				            flvPlayer = flvjs.createPlayer({
+				                type: 'flv',
+				                url: urls[index]
+				            });
+				
+				            flvPlayer.attachMediaElement(videoElement);
+				            flvPlayer.load();
+				            flvPlayer.play();
+				        }
+				
+				        document.getElementById('nextButton').addEventListener('click', switchToNextRoom);
+				        document.getElementById('previousButton').addEventListener('click', switchToPreviousRoom);
+				    }
 				</script>
 			</aside>
 			<footer>
