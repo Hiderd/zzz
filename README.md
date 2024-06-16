@@ -1,4 +1,4 @@
-预览网址：https://hiderd.github.io/zzz.github.io/html/paiming.html
+预览网址：[https://hiderd.github.io/zzz.github.io/html/paiming.html](https://hiderd.github.io/zzz.github.io/index.html)
 
 # 实验报告：Web 项目设计与开发实验
 
